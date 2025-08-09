@@ -1,0 +1,8 @@
+{
+  "alice": {
+    "password_bcrypt": "$2b$12$kP.RKw7u0wCq8vAwm5UEcOn0747.MXFIlIpw66CObH.xEO.2jukJ6"
+  },
+  "bob": {
+    "password_bcrypt": "$2b$12$qZKYAy6YSZY.J6rcNrIzXuPE5D0i0peK7CZ2lf3rkShsEbfZYqZva"
+  }
+}
