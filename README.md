@@ -1,4 +1,4 @@
-# AI risk scoring usage with IsolationForest + encoders + per-user geo baseline to Login and Token API
+# AI/ML Risk Scoring with IsolationForest + encoders + per-user geo baseline to Login and Token API
 AI risk scoring to a simple Login &amp; Token API and enforces allow / deny / MFA decisions. ML model that scores login attempts based on geo, device, network, and historical behavior.
 This repo is a runnable reference that adds AI risk scoring to a simple Login & Token API and enforces allow / deny / MFA decisions.
 
