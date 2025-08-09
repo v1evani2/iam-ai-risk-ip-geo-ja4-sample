@@ -20,7 +20,7 @@ iam-ai-month1-login-risk/
 │  ├─ auth_service.py      # Sample Login & Token API (policy gate + JWTs)
 │
 ├─ data/
-│  ├─ sample_logins.csv    # Tiny starter CSV
+│  ├─ sample_logins.csv    # 20k samples CSV
 │  ├─ users.json           # Demo users (bcrypt hashed)
 │
 ├─ models/                 # (created after training) model.joblib, encoders.json, user_geo.json
