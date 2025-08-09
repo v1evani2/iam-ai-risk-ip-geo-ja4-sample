@@ -249,12 +249,6 @@ curl -X POST http://localhost:9000/token -H 'Content-Type: application/json' -d 
   "refresh_token":"<paste from /login response>"
 }'
 ```
-
-> Note: The “MFA required” branch currently **returns a structured response** to simulate step-up. You can wire it to your real MFA by:
->
-> * Enabling the scorer’s **MFA webhook** (Sec. 6), or
-> * Implementing `/login/complete` that verifies a code and then issues tokens.
-
 ---
 
 ## 8) Data schema (event)
