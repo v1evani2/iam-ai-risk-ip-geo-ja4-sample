@@ -329,7 +329,33 @@ Fields accepted by `/score` (and sent by the Login API):
 
 ---
 
-## 11) Troubleshooting
+## 11) Run Samples
+
+```
+curl -X POST http://localhost:9000/login -H 'Content-Type: application/json' -d '{
+  "username":"alice","password":"Password123!",
+  "timestamp":"2025-08-09T18:34:56Z",
+  "ip":"198.51.100.9","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X)",
+  "device_id":"dev-1","success": true,
+  "country":"US","region":"CA","city":"San Jose",
+  "ja4":"t22213d301000_1234_5678","ja4h":"ge11nn100000_9999","ja4s":"654321"
+}'
+{"allowed":true,"session_id":"5fe96d39-1321-4a69-ac04-911c4c970f85","tokens":{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpYW0tYWktc2FtcGxlIiwiYXVkIjoiaWFtLWNsaWVudHMiLCJzdWIiOiJhbGljZSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJpYXQiOjE3NTQ3Nzg5MTIsImV4cCI6MTc1NDc3OTgxMiwianRpIjoiYzI5MjQwNjQtNGVjZi00YWIyLThiOTMtYWVmM2NiZGRkZDgxIn0.9vZCMf8cZ0R4q9yP6JZeR3MEY3TFXLoe3w7BMQBL2P0","expires_in":900,"token_type":"Bearer","refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpYW0tYWktc2FtcGxlIiwiYXVkIjoiaWFtLWNsaWVudHMiLCJzdWIiOiJhbGljZSIsInR5cCI6InJlZnJlc2giLCJpYXQiOjE3NTQ3Nzg5MTIsImV4cCI6MTc1NTM4MzcxMiwianRpIjoiNzUyMzdjM2MtYWY5NS00MWI1LTgzY2YtODM4ZTU3MWRlMTQxIn0.SvhQzs8xsgt1mqx9BxpnLsE0XpXR5BnJhfnmozKg1bU","refresh_expires_in":604800,"scope":"openid profile email"},"score":{"risk_score":50.0,"risk_level":"low","model_label":1,"explain":{"hour":18,"day_of_week":5,"success":1,"user_freq":1,"ip_freq":93,"device_freq":8,"ua_freq":5060,"ja4_freq":0,"ja4h_freq":0,"ja4s_freq":0,"ip_rep":5.0},"ts_scored":1754778912.435404}}%              
+
+curl -X POST http://localhost:9000/login -H 'Content-Type: application/json' -d '{
+  "username":"alice","password":"Password123!",
+  "timestamp":"2025-08-09T18:34:56Z",
+  "ip":"198.01.100.9","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X)",
+  "device_id":"dev-1","success": true,
+  "country":"US","region":"CA","city":"San Jose",
+  "ja4":"t22213d301000_1234_5678","ja4h":"ge11nn100000_9999","ja4s":"654321"
+}'
+{"allowed":false,"mfa_required":true,"score":{"risk_score":50.0,"risk_level":"high","model_label":-1,"explain":{"hour":18,"day_of_week":5,"success":1,"user_freq":1,"ip_freq":1,"device_freq":8,"ua_freq":5060,"ja4_freq":0,"ja4h_freq":0,"ja4s_freq":0,"ip_rep":0.0},"ts_scored":1754778943.720663},"message":"MFA required due to elevated risk."}                                             
+```
+
+---
+
+## 12) Troubleshooting
 
 * **`ModuleNotFoundError`**: activate venv and re-install deps
   `source .venv/bin/activate && pip install -r requirements.txt`
