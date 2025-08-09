@@ -373,7 +373,3 @@ curl -X POST http://localhost:9000/login -H 'Content-Type: application/json' -d 
   Check `WEBHOOK_RISK_THRESHOLD`; confirm your listener accepts POST and returns 2xx; if HMAC enabled, verify the signature header.
 
 ---
-
-
-Need me to drop this README straight into your repo ZIP and re-package, or wire `/login/complete` + a tiny MFA simulator next?
-
